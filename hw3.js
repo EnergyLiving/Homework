@@ -22,13 +22,10 @@
 	// 5 times 5
 	// 5 divided by 5
 
-	console.log (5+5);
-	console.log (5-5);
-	console.log (5*5);
-	console.log (5/5);
-
-
-
+console.log(5 + 5);
+console.log(5 - 5);
+console.log(5 * 5);
+console.log(5 / 5);
 
 
 // Problem 2
@@ -49,30 +46,25 @@
 	//
 	// You can review Rebecca Murphey's post on how to avoid using "else if" by going here: http://rmurphey.com/blog/2012/12/10/js-conditionals/
   
-  var cookieThief = ['Dad', 'Mom', 'Me',''];
-  function consequences (cookieThief) { 
-    
-   	if (cookieThief==='Dad') {
-       return "He's going to be in trouble!";
-    }
+//JG: I love this function name. Made me LOL!
+function consequences(cookieThief) { 
+	
+	if (cookieThief === 'Dad') {
+		return "He's going to be in trouble!";
+	}
 
-    if (cookieThief==='Mom'){
-  	  return 'No big deal';
-    }
+	if (cookieThief === 'Mom'){
+		return 'No big deal';
+	}
 
-    if (cookieThief==='Me') {
-  	   return 'No more cookies for you.';
+	if (cookieThief === 'Me') {
+		return 'No more cookies for you.';
+	}
 
-  }
-  	 
-  	  return 'Johnny did it.'; 
-  		 
-  	    
-  }
+	return 'Johnny did it.'; 
+}
 
-  console.log =consequences(cookieThief = 'Mom');
-
-  	  
+console.log(consequences('Mom'));
  
    
    
@@ -90,22 +82,17 @@
 	//
 	// Examples of Boolean conditions can be found here on Ex. 2.1: http://eloquentjavascript.net/chapter2.html
 
- var day =('Thursday'); var time=('6:30PM'); var room =('HU317');
-    (day==='Thursday' && time==='6:30PM' && room==='HU317');
+//JG: It seems like you overthought the solution to this problem. What you had was good, but you could've accomplished the same thing without a function.
+// If you see code below it accomplishes what was asked for. I really just wanted you to have practice writing combined Boolean conditions, so nice job on what you had.
 
-function location() {
+var day = 'Thursday'; 
+var time = '6:30PM'; 
+var room = 'HU317';
 
-	var day = 'Thursday';
-	var time = '6:30PM';
-	var room = 'HU317';
-
-	if (day === 'Thursday' && time === '6:30PM' && room === 'HU317') {
-		return "You are in CA276";
-	}
-
-	 return "You are in another class";
+if (day === 'Thursday' && time === '6:30PM' && room === 'HU317') {
+	console.log("You are in CA276");
 }
-     
+	 
 // Problem 4
 	// Bart Simpson detention problem
 	//
@@ -127,21 +114,27 @@ function location() {
 	//
 	// console.log(bartSimpson);
 
-	
+//JG: The use of whitespace made it hard for me to read what you had here. I broke it up to make it easier on the eyes. Can you see what I changed?	
 
-	var bartSimpson = ''; 
-	var i=0; while (i<11){ i++;
-		bartSimpson += 'I will not make fun of the teacher using JavaScript code.';}
-    
-    console.log = (bartSimpson);  
+var bartSimpson = ''; 
+var i = 0; 
+
+while (i < 11) { 
+	i += 1;
+	bartSimpson += 'I will not make fun of the teacher using JavaScript code.';
+}
+
+console.log(bartSimpson);  
 
 
 
 // Problem 5
 	// Do the same as you did in question 4 but write it as a for loop.
 
-var bartSimpson = ''; 
-	for (var i=0; i<11; i++) {
-		bartSimpson += 'I will not make fun of the teacher using JavaScript code.';}
+bartSimpson = ''; 
+
+for (i = 0; i < 11; i += 1) {
+	bartSimpson += 'I will not make fun of the teacher using JavaScript code.';
+}
    
-   console.log =(bartSimpson);
+console.log(bartSimpson);
