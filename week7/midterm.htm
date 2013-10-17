@@ -78,17 +78,24 @@
 	<script>
 		
 var courseName = "Fundamentals of Javascript";
-var daysINMarch = "31";
+//JG: I would go with a number type for this
+var daysINMarch = 31;
+//JG: Aw! Don't be harsh on yourself! Judging from the looks of the mid-term, you are well ahead of some of your peers.
 var iKnowJavascript = false;
 var rockvilleBestRestaurants = ["Woodmont Grill", "Season's 52,", "Matchbox"];
+//JG: I would've gone with a number type, but I see why you chose a string
 var annualSalaryWebDeveloper = "$117,260";
 
 
 // Problem 2
+//JG: The formula can also be written as
+// 20 * 1.25
 var drink = 20 + (20 * 25e-2);
+// 400 * 0.85
 var smartphone = 400 - (400 * 15e-2);
 var fourSubSandwiches = 4 * 5;
 var costPerPerson = 75 / 5;
+//JG: I think the use of scientific notation is unique although somewhat hard to read.
 var bonus = 1e-1 * 2e-1;
 
 console.log(
@@ -102,49 +109,47 @@ console.log(
 
 		
 		// Problem 3
+//JG: This threw a syntax error
+var choicesOfEditor = ["Eclipse", "Aptana Studio", "Sublime Text", "Notepad"];
 
-var choicesOfEditor["Eclipse", "Aptana Studio", "Sublime Text", "Notepad"];
 
-function correctEditor {
+function correctEditor(editor) {
 
-	if (correctEditor === "Eclipse") {
-		console.log("Java Developer");
+	if (editor === "Eclipse") {
+		return "Java Developer";
+	} else if (editor === "Aptana Studio") {
+		return "Web Developer";
+	} else if (editor === "Sublime Text") {
+		return "I am Awesome";
+	} else if (editor === "Notepad") {
+		//JG: Had to make the last "else" into an "else if"
+		return "Wrong Editor";
 	}
 
-	else if (correctEditor === "Aptana Studio"); {
-	   console.log("Web Developer");
-	}
-
-	else if (correctEditor === "Sublime Text"); {
-		console.log("I am Awesome");
-	}
-
-	else (correctEditor === "Notepad") {
-		console.log("Wrong Editor");
-	}
-	
 }
-		
+
+console.log(correctEditor('Eclipse'));
+console.log(correctEditor('Aptana Studio'));
+console.log(correctEditor('Sublime Text'));
+console.log(correctEditor('Notepad'));
 		
 		// Problem 4
 
- var i=0;
- var count = i + num;
+var i;
 
-
- for i=5; i > 5 && < 16; i += 1) {
-	count += num;
+for (i = 5; i < 16; i += 1) {
+	// count += num;
+	console.log(i);
 }
 		
 		// Problem 5
 var 
  num1 = 4;
  num2 = 8;
- num3 =12;
+ num3 = 12;
 
-function average [num1, num2, num3] {
-
-	(num1 + num2 + num3)/3;
+function average (num1, num2, num3) {
+	return (num1 + num2 + num3) / 3;
 }
 
 
@@ -153,6 +158,8 @@ function average [num1, num2, num3] {
 		// Problem 6
 
 //The hardest part of learning Javascript is the one's ability to think logically.  
+
+//JG: You're telling me!
 		
 	</script>
 
