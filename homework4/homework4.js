@@ -1,4 +1,3 @@
-
 // Homework 4
 
 // This homework assignment will give you practice working with objects. 
@@ -32,26 +31,14 @@ athlete1.age = 18;
 athlete1.countryOfOrigin = "England";
 athlete1.medals = ["Gold Medal"];
 athlete1.isOlympian = true;
-athlete1.introduce = function () {
-    return ("Hello! My name is " + this.name + " and I am from " + this.countryOfOrigin + ".");
-    this.medals.push("Silver Medal");
+athlete1.introduce = function() {
+	return "Hello! My name is " + this.name + " and I am from " + this.countryOfOrigin + ".";
 };
-athlete1.addMedal = function () {
-    this.medals.push("Gold Medal");
+athlete1.addMedal = function(medal) {
+	this.medals.push(medal);
 };
-     
-
-      
-
-//var athlete1, athlete2, athlete3;// = {};
 
 
-
-
-// athlete.foo = "bar"
-// athlete.method = function () {
-// 
-// }
 
 // Problem 2
 // Create the object using the associate array syntax (i.e. strings within square brackets).
@@ -63,30 +50,31 @@ athlete2['age'] = 23;
 athlete2['countryOfOrigin'] = "United States";
 athlete2['isOlympian'] = true;
 athlete2['medals'] = ["Bronze Medal"];
-athlete2['introduce'] = function () {
-    return ("Hello I am " + this['name'] + " and I am from the " + this['countryOfOrigin'] + ".");
+athlete2['introduce'] = function() {
+	return "Hello I am " + this['name'] + " and I am from the " + this['countryOfOrigin'] + ".";
 };
-athlete2['addMedal'] = function () {
-    athlete2['medals'].push("Gold Medal");
+athlete2['addMedal'] = function(medal) {
+	this['medals'].push(medal);
 };
-    
-//      athlete2['method'] = function () { +//  +// } + + + +//
+
+
+
 //Problem 3 +// Create the same object using ONE object literal + + + +
 // set key/value pairs inside here
 
 var athlete3 = {
-    name: 'Roberto Munoz',
-    height: "5'11\"",
-    age: 24,
-    countryOfOrigin: 'Spain',
-    medals: ["Silver Medal"],
-    anOlympian: true,
-    introduction: function () {
-        return "Hello, I am" + this.name + " and I am from the" + this.countryOfOrigin + ".";
-    },
-    addMedal: function (medal) {
-        (this.medals.push + ["Bronze Metal"]);
-    }
+	name: 'Roberto Munoz',
+	height: "5'11\"",
+	age: 24,
+	countryOfOrigin: 'Spain',
+	medals: ["Silver Medal"],
+	isOlympian: true,
+	introduction: function() {
+		return "Hello, I am" + this.name + " and I am from the" + this.countryOfOrigin + ".";
+	},
+	addMedal: function(medal) {
+		this.medals.push(medal);
+	}
 
 }
 
@@ -97,18 +85,18 @@ var athlete3 = {
 var athlete4 = new Athlete("Byron Jettson", "5'10\"", 24, "Russia", ['Silver Medal'], true);
 
 function Athlete(name, height, age, countryOfOrigin, medals, isOlympian) {
-    this.name = name;
-    this.height = height;
-    this.age = age;
-    this.countryOfOrigin = countryOfOrigin;
-    this.medals = medals;
-    this.isOlympian = isOlympian;
-    this.introduce = function () {
-        return "Hello I am " + this.name + " and I am from the " + this.countryOfOrigin + ".";
-    };
-    this.addMedal = function (medal) {
-        this.medals.push("Gold Medal");
-    };
+	this.name = name;
+	this.height = height;
+	this.age = age;
+	this.countryOfOrigin = countryOfOrigin;
+	this.medals = medals;
+	this.isOlympian = isOlympian;
+	this.introduce = function() {
+		return "Hello I am " + this.name + " and I am from the " + this.countryOfOrigin + ".";
+	};
+	this.addMedal = function(medal) {
+		this.medals.push(medal);
+	};
 }
 
 // PROBLEM BELOW IS OPTIONAL
