@@ -72,13 +72,16 @@ document.getElementById('w3cExample').onclick = function(){
  }
  
  // Problem 3
+  $('#jQueryExample').on('click', function() {
+  $('#dl')
+  .append('<div id="mask"></div>')
+  .append('<div id="dd">Pedantic</div>')
+  .append('<div id="dt">Characterized by a narrow, often ostentatious concern for book learning and formal rules.</div>')
+ })
  
- $('#jQueryExample').on('click'),function(){
- $('#dl')
-   .append('<div id ="mask"></div>')
-   .append('>div id ="dd">Pedantic</div>')
-   .append('<div id="dt">Characterized by a narrow, often ostentatious concern for book learning and formal rules.</div>')
- }
+
+
+ 
  
  
  
