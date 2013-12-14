@@ -73,13 +73,12 @@
 
  // Problem 3
 
- $('#jQueryExample').on('click'),
- function() {
+ $('#jQueryExample').on('click', function() {
  	$('#dl')
  		.append('<div id ="mask"></div>')
- 		.append('>div id ="dd">Pedantic</div>')
+ 		.append('<div id ="dd">Pedantic</div>')
  		.append('<div id="dt">Characterized by a narrow, often ostentatious concern for book learning and formal rules.</div>')
- }
+ });
 
 
 
