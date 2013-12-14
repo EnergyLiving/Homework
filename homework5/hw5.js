@@ -20,16 +20,16 @@ var dl, dd, dt;
 //create dl
 dl = document.createElement('dl');
 
-//create dd
-dd = document.createElement('dd');
-dd.appendChild(document.createTextNode('Pedantic'));
-
 //create dt
 dt = document.createElement('dt');
-dt.appendChild(document.createTextNode('Characterized by a narrow, often ostentatious concern for book learning and formal rules.'));
+dt.appendChild(document.createTextNode('Pedantic'));
 
-dl.appendChild(dd);
+//create dd
+dd = document.createElement('dd');
+dd.appendChild(document.createTextNode('Characterized by a narrow, often ostentatious concern for book learning and formal rules.'));
+
 dl.appendChild(dt);
+dl.appendChild(dd);
 
 document.body.appendChild(dl);
 
