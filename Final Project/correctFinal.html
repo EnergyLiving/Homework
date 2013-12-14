@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+ 
+ <html lang="en"><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+     <meta charset="utf-8">
+     <title>Form Validation</title>
+     <style type="text/css">
+       body { font-family: Helvetica, sans-serif; font-size: 14px; }
+       
+       br { clear: both; }
+       
+       form div, input, label, select, textarea { display: block; float: left; font-weight: normal; }
+       
+       form div label, form div input { float: none; display: inline; }
+      
+      form div, label + input, label + textarea, label + select, label + textarea { margin-bottom: 15px; }
+      
+      form div br { clear: none; }
+            
+      input, textarea { font: 12px Helvetica, Arial; color: DarkBlue; }
+      
+      input[type="text"] { width: 250px; }
+      
+      input[type="email"] { width: 175px; }
+      
+      input[type="radio"], input[type="checkbox"] { padding-right: 5px; }
+      
+      label { width: 150px; }
+      
+      a:visited { color: Blue; }
+      
+      textarea { display: inline; height: 75px; width: 225px; }
+      
+      #form_wrapper { border: 1px solid Gray; border-radius: 8px; margin: 0 auto; padding: 10px 15px; width: 550px; }
+      
+      .hidden { display: none; }
+      
+      .dialog { border-radius: 8px; font-size: 18px; font-weight: bold; padding: 8px 0; margin: 0 auto 16px auto; text-align: center; width: 80%; }
+      
+      .warning { background-color: LightPink; color: DarkRed; }
+      
+      .status { background-color: LightGreen; color: Teal; }
+      
+      #error { background-color: LightPink; border-radius: 4px; color: DarkRed; padding: 8px; }
+    </style>
+  </head>
+  <body>
+    <div id="form_wrapper">
+      <form method="post" action="form-submit.cfm">
+        <label for="first_name">First name</label>
+        <input type="text" id="first_name" name="first_name" class="required" value="Sheran"><br>
+        <label for="last_name">Last name</label>
+        <input type="text" id="last_name" name="last_name" class="required" value="Sheran"><br>
+        <label for="age">Age</label>
+        <input type="text" id="age" name="age" class="required" value="19"><br>
+        <label for="email">Email</label>
+        <input type="text" name="email" value="sheran@sheran.com"><br>
+    		<label for="experience">Experience Level</label>
+        <select id="experience" name="experience">
+          <option value="">---Please select---</option>
+          <option value="Beginner">Beginner</option>
+          <option value="Intermediate" selected>Intermediate</option>
+          <option value="Advanced">Advanced</option>
+           </select>
+         <br>
+    		<label for="bio">Bio</label>
+        <textarea id="bio">Place your Bio here</textarea><br>
+
+        <label for="url">Personal Website</label>
+        <input type="text" id="url" name="url" class="required" value="Sheran@Sheran.com"><br>
+
+        <label for="home_phone">Home Phone</label>
+        <input type="text" id="home_phone" name="home_phone" class="required" value="555-555-5555"><br>
+
+        <label for="mobile">Mobile Phone</label>
+        <input type="text" id="mobile" name="mobile" class="required" value="Sheran"><br>
+   
+              
+        
+        <label for="meal">Meal Preference</label>
+        <div>
+          <label><input type="radio" id="meal" name="meal">A la carte</label><br>
+          <label><input type="radio" name="meal">Gluten intolerant meal</label><br>
+          <label><input type="radio" name="meal">Kosher</label><br>
+          <label><input type="radio" name="meal">Jain meal</label><br>
+          <label><input type="radio" name="meal">Muslim</label><br>
+          <label><input type="radio" name="meal">Vegetarian </label><br>
+          <label><input type="radio" name="meal">Vegan</label>
+        </div>
+        <br>
+
+        <label for="skills">Skills</label>
+        <div>
+          <label><input type="checkbox" id="skills" name="skills">HTML</label><br>
+          <label><input type="checkbox" name="skills">Javascript</label><br>
+          <label><input type="checkbox" name="skills">jQuery</label><br>
+          <label><input type="checkbox" name="skills">Dojo</label><br>
+          <label><input type="checkbox" name="skills">Prototype</label><br>
+          <label><input type="checkbox" name="skills">Flash</label><br>
+          <label><input type="checkbox" name="skills">CSS</label><br>
+          <label><input type="checkbox" name="skills">Flex</label>
+        </div>
+        <br>
+
+        <label id="arrival_date">Arrival Date</label>
+        <input type="text" name="arrival_date" value="1/15/2013"><br>
+      
+        
+        <label>&nbsp;</label>
+        <div id="error" class="hidden"></div><br>
+        
+        <label>&nbsp;</label>
+        <input type="submit" value="Submit"><br>
+      </form>
+    </div>
+    <script>src="correctFinal.js"</script>
+   
+ 
+ </body></html>
