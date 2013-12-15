@@ -1,0 +1,66 @@
+<!doctype html>
+<html>
+
+<head>
+<script>
+function draw(x,y){
+	var canvas = document.getElementById('canvas');
+	var ctx = canvas.getContext('2d');
+	
+    //experimented with animation 
+	ctx.save();
+	ctx.clearRect(0,0,550,400);
+	ctx.fillStyle = "rgba(3,157,52,1)";
+    ctx.fillRect (x, y, 80, 80);
+	ctx.restore(); 
+	x += 1;
+	y += 1;
+
+	   //learned to render the Bezier Curve 
+	      ctx.lineWidth = 6;
+          ctx.strokeStyle = "Green";
+          ctx.beginPath();
+          ctx.moveTo(400, 785);
+          ctx.bezierCurveTo(150, 200, 611, 500, 700, 1);
+          ctx.stroke();
+
+          ctx.beginPath();
+          ctx.lineWidth = 6;
+          ctx.strokeStyle = "Green"
+          ctx.moveTo(400, 800);
+          ctx.lineTo(450, 50);
+          ctx.stroke();
+
+         
+         //learned to render a circle/experimented with applying  colors
+         var centerX = canvas.width / 2;
+         var centerY = canvas.height / 2;
+         var radius = 100;
+
+             
+          ctx.beginPath();
+          ctx.arc(centerX, centerY, radius, 0, 2 * Math.PI, false);
+          ctx.fillStyle = 'rgba(3,157,52,.7)';
+          ctx.fill();
+          ctx.lineWidth = 6;
+          ctx.strokeStyle = 'Green';
+          ctx.stroke();
+
+	var loopTimer = setTimeout('draw('+x+','+y+')',30);
+}
+</script>
+
+
+</head>
+<body>
+
+<button onclick="draw(0,0)">Start</button>
+<canvas id="canvas" width="1000" height="800"></canvas>
+<style type="text/css">
+canvas {background-color: #ccffcc; border: 10px solid silver; }
+</style>
+
+
+
+</body>  
+</html> 
