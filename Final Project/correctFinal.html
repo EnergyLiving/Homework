@@ -2,7 +2,11 @@
  
  <html lang="en"><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
      <meta charset="utf-8">
+ 
+
+<head>
      <title>Form Validation</title>
+
      <style type="text/css">
        body { font-family: Helvetica, sans-serif; font-size: 14px; }
        
@@ -30,7 +34,7 @@
       
       textarea { display: inline; height: 75px; width: 225px; }
       
-      #form_wrapper { border: 1px solid Gray; border-radius: 8px; margin: 0 auto; padding: 10px 15px; width: 550px; }
+      #form_wrapper { border: 1px solid Gray; border-radius: 8px; margin: 0 auto; padding: 10px 15px; width: 550px; height: 800px; }
       
       .hidden { display: none; }
       
@@ -44,35 +48,37 @@
     </style>
   </head>
   <body>
+     
+
     <div id="form_wrapper">
-      <form method="post" action="form-submit.html">
-        <label for="first_name">First name</label>
-        <input type="text" id="first_name" name="first_name" class="required" value="Sheran"><br>
+      <form method="post" action="form-submit.cfm">
+        <label for="first_name">First name </label>
+        <input type="text" onkeyup="return limitlength(this, 50)" id="first_name" name="first_name" class="required"  value= "Sheran"<label><br>
         <label for="last_name">Last name</label>
-        <input type="text" id="last_name" name="last_name" class="required" value="Sheran"><br>
+        <input type="text" id="last_name" name="last_name" class="required" onkeyup="return limitlength(this, 50)" value="Sheran"><br>
         <label for="age">Age</label>
-        <input type="text" id="age" name="age" class="required" value="19"><br>
+        <input type="text" id="age" name="age" class="required" value="19">
         <label for="email">Email</label>
-        <input type="text" name="email" value="sheran@sheran.com"><br>
+        <input type="text" name="email" class="required" value="sheran@sheran.com"><br>
     		<label for="experience">Experience Level</label>
-        <select id="experience" name="experience">
+        <select id="experience" name="experience" class "required">
           <option value="">---Please select---</option>
           <option value="Beginner">Beginner</option>
           <option value="Intermediate" selected>Intermediate</option>
           <option value="Advanced">Advanced</option>
            </select>
          <br>
-    		<label for="bio">Bio</label>
-        <textarea id="bio">Place your Bio here</textarea><br>
+         <label for="bio">Bio</label>
+         <textarea id="bio" class="required" onkeyup="returnlimitlength(this,140"></textarea><br>
 
-        <label for="url">Personal Website</label>
+    		<label for="url">Personal Website</label>
         <input type="text" id="url" name="url" class="required" value="Sheran@Sheran.com"><br>
 
         <label for="home_phone">Home Phone</label>
         <input type="text" id="home_phone" name="home_phone" class="required" value="555-555-5555"><br>
 
         <label for="mobile">Mobile Phone</label>
-        <input type="text" id="mobile" name="mobile" class="required" value="Sheran"><br>
+        <input type="text" id="mobile" name="mobile" class="required" value="555-555-5555"><br>
    
               
         
@@ -100,19 +106,23 @@
           <label><input type="checkbox" name="skills">Flex</label>
         </div>
         <br>
+        <div>
+        <label for="arrival_date">Expected Arrival</label>
+        <Label><input type="text" id="arrival_date"></label>
+         </div>
+         <br>   
 
-        <label id="arrival_date">Arrival Date</label>
-        <input type="text" name="arrival_date" value="1/15/2013"><br>
-      
+          
         
         <label>&nbsp;</label>
-        <div id="error" class="hidden"></div><br>
+         <div id="error" class="hidden"></div><br>
         
         <label>&nbsp;</label>
         <input type="submit" value="Submit"><br>
       </form>
     </div>
-    <script src="correctFinal.js"></script>
-   
- 
+    <script> src="correctFinal.js"</script>
+    
+    
+  
  </body></html>

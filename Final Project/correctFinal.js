@@ -1,79 +1,94 @@
 var form = document.querySelector('form');
+       form.addEventListener('submit', function (e) {
+         var errors, i, errorDiv, namePattern, emailPattern, urlPattern, phonePattern;
+         
+         errors = [];
+         errorDiv = document.getElementById('error');
+         namePattern = /^[a-z'-]+$/igm;
+         emailPattern = /[a-z0-9_\-.]+@[a-z0-9]+\.[a-z]{2,}(.[a-z]{2,})?/igm;
+         urlPattern = /^(https?:\/\/)?([\da-z\.-]+)\.([a-z\.]{2,6})([\/\w \.-]*)*\/?$/;
+         phonePattern = ^[2-9]\d{2}-\d{3}-\d{4}$;
+       
+        // Make sure length greater than zero
+        if (namePattern.test(this.first_name.value) === false) {
+           errors.push('First name is required');
+         }
 
-form.addEventListener('submit', function(e) {
-	var errors, i, errorDiv, namePattern, emailPattern;
+         if (namePattern.test(this.last_name.value) === false) {
+           errors.push('Last name is required');
+         }
 
-	errors = [];
-	errorDiv = document.getElementById('error');
-	namePattern = /^[a-z'-]+$/igm;
-	emailPattern = /[a-z0-9_\-.]+@[a-z0-9]+\.[a-z]{2,}(.[a-z]{2,})?/igm;
-	urlPattern = /^(http[s]?:\/\/|ftp:\/\/)?(www\.)?[a-zA-Z0-9-\.]+\.(com|org|net|mil|edu|ca|co.uk|com.au|gov)$/;
-	phonePattern = /^[2-9]\d{2}-\d{3}-\d{4}$/;
+         // Make sure e-mail is valid
+         if (emailPattern.test(this.email.value) === false) {
+          errors.push('Invalid e-mail');
+         }
 
-	e.preventDefault();
+         if (urlPattern.test(this.url.value) === false) {
+          errors.push('Invalid url');
+         }
 
-	// Make sure length greater than zero
-	if (namePattern.test(this.first_name.value) === false) {
-		errors.push('First name is required');
-	}
+         
 
-	if (namePattern.test(this.last_name.value) === false) {
-		errors.push('Last name is required');
-	}
+          if (phonePattern.test(this.mobile.value) === false) {
+          errors.push('Invalid Phone Number');
+         }
 
-	// Make sure e-mail is valid
-	if (emailPattern.test(this.email.value) === false) {
-		errors.push('Invalid e-mail');
-	}
+         if (phonePattern.test(this.home_phone.value) === false) {
+          errors.push('Invalid Phone Number');
+         } 
 
-	if (urlPattern.test(this.url.value) === false) {
-		errors.push('Invalid url');
-	}
-
-	if (phonePattern.test(this.mobile.value) === false) {
-		errors.push('Invalid Phone Number');
-	}
-
-	if (phonePattern.test(this.home_phone.value) === false) {
-		errors.push('Invalid Phone Number');
-	}
-	// Drop down validation
-	if (this.experience.value.length === 0) {
-		errors.push('Please indicate your level of experience');
-	}
-
-	// Date validation
-	if (isDate(this.arrival_date.value) === false) {
-		errors.push('You must indicate your arrival date.');
-	}
-
-	// Radio button validation
-	if (document.querySelectorAll('[meal]:checked').length === 0) {
-		errors.push('Please select a meal');
-	}
-
-	if (document.querySelectorAll('[skills]:checked').length === 0) {
-		errors.push('Please select a skills');
-	}
+         // Drop down validation
+         if (this.experience.value.length === 0) {
+           errors.push('Please indicate your level of experience');
+         }
+ 
+         // Date validation
+         if (isDate(this.arrival_date.value) === false) {
+           errors.push('You must indicate your arrival date.');
+         }
+ 
+         // Radio button validation
+         if (document.querySelectorAll('[meal]:checked').length === 0) {
+           errors.push('Please select a meal');
+         }
 
 
+         if (limitlength(this.first_name.value)=== false) {
+         	errors.push('You have a 50 character limit.')
+         }
 
-	//If any inputs failed prevent form submit
-	if (errors.length > 0) {
-		//prevent form submit
-		e.preventDefault();
+         if (limitlength(this.last_name.value)=== false) {
+         	errors.push('You have a 50 character limit.')
+         }
 
-		//unhide
-		errorDiv.className = '';
+         if (limitlength(this.bio.value)=== false) {
+         	errors.push('You have a 140 character limit')
+         }
 
-		//clear out previous errors
-		errorDiv.innerHTML = errors.join('<br>');
-	}
-}, false);
 
-// date === 12/30/2013
-//function isDate(date) {
-/* var dateParts;
+         if (document.querySelectorAll('[skills]:checked').length === 0) {
+           errors.push('Please select a skill.');
+         }
+
+         if(this.bio.value.length === 0) {
+           errors.push('Please include your bio.')
+         }
+
+          //If any inputs failed prevent form submit
+         if (errors.length > 0) {
+           //prevent form submit
+           e.preventDefault();
+           
+           //unhide
+           errorDiv.className = '';
+           
+           //clear out previous errors
+           errorDiv.innerHTML = errors.join('<br>');
+         }
+       }, false);
+ 
+       function isDate(date) {
+         var dateParts;
  
          dateParts = date.split('/');
  
@@ -96,4 +111,38 @@ form.addEventListener('submit', function(e) {
          }
  
          return true;
-       }*/
+
+
+          
+
+     }
+
+      if function limitlength(obj, length){
+		var maxlength=length
+		if (obj.value.length>maxlength)
+		obj.value=obj.value.substring(0, maxlength)
+		
+
+		return false;
+	}
+
+
+     }
+
+
+
+
+
+
+
+	
+
+	
+	
+	
+
+	
+
+
+
+	
