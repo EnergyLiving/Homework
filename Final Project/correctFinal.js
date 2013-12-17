@@ -7,7 +7,9 @@ var form = document.querySelector('form');
          namePattern = /^[a-z'-]+$/igm;
          emailPattern = /[a-z0-9_\-.]+@[a-z0-9]+\.[a-z]{2,}(.[a-z]{2,})?/igm;
          urlPattern = /^(https?:\/\/)?([\da-z\.-]+)\.([a-z\.]{2,6})([\/\w \.-]*)*\/?$/;
-         phonePattern = ^[2-9]\d{2}-\d{3}-\d{4}$;
+         phonePattern = /\d{3}-\d{3}-\d{4}/
+
+         e.preventDefault();
        
         // Make sure length greater than zero
         if (namePattern.test(this.first_name.value) === false) {
@@ -112,22 +114,23 @@ var form = document.querySelector('form');
  
          return true;
 
+       }
 
-          
-
-     }
+       
+   
 
       if function limitlength(obj, length){
 		var maxlength=length
 		if (obj.value.length>maxlength)
 		obj.value=obj.value.substring(0, maxlength)
 		
+    }
 
 		return false;
-	}
+	
 
 
-     }
+     }*/
 
 
 
