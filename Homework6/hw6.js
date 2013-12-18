@@ -24,7 +24,7 @@ console.log(document.querySelectorAll('.highlight'));
 
 // Any element under a form tag (hint: the asterisk is the wild card in CSS)
 
-console.log(document.querySelectorAll('*[type=form]'));
+console.log(document.querySelectorAll('form *'));
 
 // All elements with the IDs "movies", "companies", or "fast_food" 
 // (hint: use the comma to separate selectors)
@@ -33,27 +33,27 @@ console.log(document.querySelectorAll('#movies, #companies, #fast_food'));
 
 // All elements that have an ID attribute
 
-console.log(document.querySelectorAll('id'));
+console.log(document.querySelectorAll('[id]'));
 
 // All elements that have an ID attribute that ends with the letter "s"
 
-console.log(document.querySelectorAll('id>[last-letter="s"]'));
+console.log(document.querySelectorAll('[id$="s"]'));
 
 // The first child LI element of all lists, ordered or unordered
 
-console.log(document.querySelectorAll('ul,ol,li:first-child'));
+console.log(document.querySelectorAll('ul li:first-child, ol li:first-child'));
 
 // The second child LI element of all lists, ordered or unordered
 
-console.log(document.querySelectorAll('ul,ol> li:nth-child(2)'));
+console.log(document.querySelectorAll('ul li:nth-child(2), ol li:nth-child(2)'));
 
 // All elements that are empty
 
-console.log(document.querySelectorAll('*>[null]'));
+console.log(document.querySelectorAll(':empty'));
 
 // All elements that are checked
 
-console.log(document.querySelectorAll('*>[checked]'));
+console.log(document.querySelectorAll(':checked'));
 
 // All radio buttons
 
@@ -65,19 +65,19 @@ console.log(document.querySelectorAll('[type=radio]:checked'));
 
 // All TDs that represent the 2nd column in the table with ID "names"
 
-console.log(document.querySelectorAll('td:nth-child(2)'));
+console.log(document.querySelectorAll('#names td:nth-child(2)'));
 
 // All elements with the class name "hidden" that are not form elements
 
-console.log(document.querySelectorAll('li.hidden'));
+console.log(document.querySelectorAll('.hidden:not(form)'));
 
 // All even TRs that are descendants of a TBODY
 
-console.log(document.querySelectorAll('tbody>tr:nth-child(even)'));
+console.log(document.querySelectorAll('tbody > tr:nth-child(even)'));
 
 // All odd TRs that are descendants of a TBODY
 
-console.log(document.querySelectorAll('tbody>tr:nth-child(odd)'));
+console.log(document.querySelectorAll('tbody > tr:nth-child(odd)'));
 
 //var sort = function(tr[1]){
 
