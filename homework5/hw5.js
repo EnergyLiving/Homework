@@ -63,6 +63,7 @@ $('#definitions')
 // When you have your DOM nodes ready, call document.body.appendChild() to append
 // to the end of the body element.
 
+<<<<<<< HEAD
 // Feel free to replace "Some word" and "Some definition" with text of your 
 // choosing. If you need ideas check out http://wordsmith.org/words/random.cgi
 
@@ -72,6 +73,16 @@ $('#definitions')
 // Do the same thing as problem 1 only insert your HTML using the innerHTML
 // property of the DIV with id="definitions".
 
+=======
+ // Problem 3
+
+ $('#jQueryExample').on('click', function() {
+ 	$('#dl')
+ 		.append('<div id ="mask"></div>')
+ 		.append('<div id ="dd">Pedantic</div>')
+ 		.append('<div id="dt">Characterized by a narrow, often ostentatious concern for book learning and formal rules.</div>')
+ });
+>>>>>>> parent of 710ef07... Merge branch 'master' of https://github.com/EnergyLiving/Homework
 
 
 
