@@ -4,12 +4,10 @@ form.addEventListener('submit', function(e) {
 
 	errors = [];
 	errorDiv = document.getElementById('error');
-	namePattern = /^[a-z'-]+$/igm;
-	emailPattern = /[a-z0-9_\-.]+@[a-z0-9]+\.[a-z]{2,}(.[a-z]{2,})?/igm;
+	namePattern = /^[a-z'-]+$/im;
+	emailPattern = /[a-z0-9_\-.]+@[a-z0-9]+\.[a-z]{2,}(.[a-z]{2,})?/im;
 	urlPattern = /^(https?:\/\/)?([\da-z\.-]+)\.([a-z\.]{2,6})([\/\w \.-]*)*\/?$/;
-	phonePattern = /\d{3}-\d{3}-\d{4}/
-
-	e.preventDefault();
+	phonePattern = /\d{3}-\d{3}-\d{4}/;
 
 	// Make sure length greater than zero
 	if (namePattern.test(this.first_name.value) === false) {
@@ -28,8 +26,6 @@ form.addEventListener('submit', function(e) {
 	if (urlPattern.test(this.url.value) === false) {
 		errors.push('Invalid url');
 	}
-
-
 
 	if (phonePattern.test(this.mobile.value) === false) {
 		errors.push('Invalid Phone Number');
@@ -50,25 +46,23 @@ form.addEventListener('submit', function(e) {
 	}
 
 	// Radio button validation
-	if (document.querySelectorAll('[meal]:checked').length === 0) {
+	if (document.querySelectorAll('[name=meal]:checked').length === 0) {
 		errors.push('Please select a meal');
 	}
 
-
-	if (limitlength(this.first_name.value) === false) {
+	if (limitlength(this.first_name, 50) === false) {
 		errors.push('You have a 50 character limit.')
 	}
 
-	if (limitlength(this.last_name.value) === false) {
+	if (limitlength(this.last_name, 50) === false) {
 		errors.push('You have a 50 character limit.')
 	}
 
-	if (limitlength(this.bio.value) === false) {
+	if (limitlength(this.bio, 140) === false) {
 		errors.push('You have a 140 character limit')
 	}
 
-
-	if (document.querySelectorAll('[skills]:checked').length === 0) {
+	if (document.querySelectorAll('[name=skills]:checked').length === 0) {
 		errors.push('Please select a skill.');
 	}
 
@@ -88,6 +82,7 @@ form.addEventListener('submit', function(e) {
 		errorDiv.innerHTML = errors.join('<br>');
 	}
 }, false);
+
 
 function isDate(date) {
 	var dateParts;
@@ -117,36 +112,9 @@ function isDate(date) {
 }
 
 
-
-
-if
 function limitlength(obj, length) {
 	var maxlength = length
-	if (obj.value.length > maxlength)
+	if (obj.value.length > maxlength) {
 		obj.value = obj.value.substring(0, maxlength)
-
+	}
 }
-
-return false;
-
-
-
-} * /
-
-
-
-
-
-
-
-	
-
-	
-	
-	
-
-	
-
-
-
-	
